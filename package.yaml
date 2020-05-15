@@ -1,0 +1,29 @@
+name:                aeson-with
+version:             0.0.1.0
+license:             BSD3
+author:              "Daniel Firth"
+maintainer:          "dan.firth@homotopic.tech"
+copyright:           "2020 Daniel Firth"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+synopsis:            withXField combinators for aeson
+category:            Data
+
+description:         Silly little withXField combinators for adding fields to an existing JSON value.
+
+dependencies:
+- aeson
+- base >= 4.7 && < 5
+- hashmap
+- lens
+- lens-aeson
+- scientific
+- text
+- unordered-containers
+- vector
+
+library:
+  source-dirs: src
