@@ -2,7 +2,6 @@
 module Data.Aeson.With (
   withJSON
 , withValue
-, withValueMaybe
 , withStringField
 , withArrayField
 , withObjectField
@@ -34,16 +33,12 @@ withStringField :: Text -> Text -> Value -> Value
 withStringField f v =  _Object  . at f ?~ String v
 
 -- | Add an Array field to a JSON value.
-withArrayField :: Text -> [Value] -> Value -> Value
-withArrayField f v = _Object . at f ?~ Array (V.fromList v)
+withArrayField :: ToJSON a => Text -> [a] -> Value -> Value
+withArrayField f v = _Object . at f ?~ Array (V.fromList (toJSON <$> v))
 
 -- | Add an Value field to a JSON value.
-withValue :: Text -> Value -> Value -> Value
-withValue f v = _Object . at f ?~ v
-
--- | Maybe add a Value to a JSON object.
-withValueMaybe :: Text -> Maybe Value -> Value -> Value
-withValueMaybe f v = _Object . at f .~ v
+withValue :: ToJSON a => Text -> a -> Value -> Value
+withValue f v = _Object . at f ?~ (toJSON v)
 
 -- | Add an Number field to a JSON value.
 withNumberField :: Text -> Scientific -> Value -> Value
