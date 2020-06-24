@@ -11,12 +11,12 @@ module Data.Aeson.With (
 )where
 
 import           Control.Lens
-import           Data.Aeson      as A
+import           Data.Aeson        as A
 import           Data.Aeson.Lens
-import qualified Data.HashMap.Lazy     as HML
+import qualified Data.HashMap.Lazy as HML
 import           Data.Scientific
 import           Data.Text
-import qualified Data.Vector      as V
+import qualified Data.Vector       as V
 
 -- | Union two JSON values together.
 withJSON :: (ToJSON a) => a -> Value -> Value
