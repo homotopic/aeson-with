@@ -1,6 +1,7 @@
 name:                aeson-with
-version:             0.1.0.0
+version:             0.1.0.1
 license:             BSD3
+git:                 git@gitlab.com:homotopic-tech/aeson-with
 author:              "Daniel Firth"
 maintainer:          "dan.firth@homotopic.tech"
 copyright:           "2020 Daniel Firth"
