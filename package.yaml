@@ -21,10 +21,18 @@ dependencies:
 - hashmap
 - lens
 - lens-aeson
+- mtl
 - scientific
 - text
 - unordered-containers
 - vector
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wredundant-constraints
 
 library:
   source-dirs: src

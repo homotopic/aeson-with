@@ -8,6 +8,8 @@ module Data.Aeson.With (
 , withNumberField
 , withBoolField
 , withNullField
+, view'
+, toListOf'
 )where
 
 import           Control.Lens
@@ -15,8 +17,15 @@ import           Data.Aeson        as A
 import           Data.Aeson.Lens
 import qualified Data.HashMap.Lazy as HML
 import           Data.Scientific
+import           Data.Semigroup
 import           Data.Text
 import qualified Data.Vector       as V
+
+view' :: ToJSON a => Getting c Value c -> a -> c
+view' f = view f . toJSON
+
+toListOf' :: ToJSON a1 => Getting (Endo [a2]) Value a2 -> a1 -> [a2]
+toListOf' f = toListOf f . toJSON
 
 -- | Union two JSON values together.
 withJSON :: (ToJSON a) => a -> Value -> Value
