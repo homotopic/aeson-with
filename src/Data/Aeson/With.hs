@@ -1,4 +1,13 @@
 {-# OPTIONS_GHC -fno-warn-incomplete-uni-patterns #-}
+{- |
+   Module     : Data.Aeson.With
+   Copyright  : Copyright (C) 2020 Daniel Firth
+   Maintainer : Daniel Firth <dan.firth@homotopic.tech
+   License    : MIT
+   Stability  : experimental
+
+withX combinators for Aeson values.
+-}
 module Data.Aeson.With (
   withJSON
 , withValue
