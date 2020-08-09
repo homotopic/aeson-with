@@ -1,5 +1,5 @@
 name:                aeson-with
-version:             0.1.1.2
+version:             0.1.2.0
 license:             MIT
 git:                 https://gitlab.com/homotopic-tech/aeson-with
 author:              "Daniel Firth"
@@ -18,10 +18,8 @@ description:         Silly little withXField combinators for adding fields to an
 dependencies:
 - aeson
 - base >= 4.7 && < 5
-- hashmap
 - lens
 - lens-aeson
-- mtl
 - scientific
 - text
 - unordered-containers

@@ -28,9 +28,11 @@ import           Data.Semigroup
 import           Data.Text
 import qualified Data.Vector       as V
 
+-- | Version of `view` for any `ToJSON`.
 view' :: ToJSON a => Getting c Value c -> a -> c
 view' f = view f . toJSON
 
+-- | Version of `toListOf` for any `ToJSON`.
 toListOf' :: ToJSON a1 => Getting (Endo [a2]) Value a2 -> a1 -> [a2]
 toListOf' f = toListOf f . toJSON
 

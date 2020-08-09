@@ -1,5 +1,9 @@
 # Changelog for aeson-with
 
+## v0.1.2.0
+
+* Remove useless dependencies on `mtl` and `hashmap`.
+
 ## v0.1.1.0
 
 * Add `view'` and `toListOf'` for viewing `ToJSON` instances.
